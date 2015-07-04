@@ -2,11 +2,11 @@
  * AjaxUploader - jQuery Plugin
  * An ajax uploader with progress event
  *
- * Github: https://github.com/amahmoodi
+ * Github: https://github.com/aMahmoodi/AjaxUploader
  * 
  * Copyright (c) 2015 Alireza Mahmoodi
  * 
- * Version: 1.0 (06/29/2015)
+ * Version: 1.1 (07/04/2015)
  * Requires: jQuery v1.3+
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -67,25 +67,25 @@
                     if(this.status == 200){
                         switch(_defines[_ID].dataType.toLowerCase()){
                             case 'json':
-                                _defines[_ID].success(_private.jsonToObj(this.responseText), this);
+                                _defines[_ID].success(_private.jsonToObj(this.responseText), file, this);
                                 break;
                             case 'xml':
-                                _defines[_ID].success(this.responseXML, this);
+                                _defines[_ID].success(this.responseXML, file, this);
                                 break;
                             case 'text':
-                                _defines[_ID].success(this.responseText, this);
+                                _defines[_ID].success(this.responseText, file, this);
                                 break;
                             default:
-                                _defines[_ID].success(this.response, this);
+                                _defines[_ID].success(this.response, file, this);
                                 break;
                         }
                         
                     }else{//error
-                        _defines[_ID].error(this);
+                        _defines[_ID].error(this.response, file, this);
 
                     }
 
-                    _defines[_ID].complete(this);
+                    _defines[_ID].complete(file, this);
                 }
             };
 
