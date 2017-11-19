@@ -2,7 +2,7 @@
  * AjaxUploader - jQuery Plugin
  * An ajax uploader with progress event
  *
- * Github: https://github.com/aMahmoodi/AjaxUploader
+ * Github: https://github.com/AlirezaMH/AjaxUploader
  * 
  * Copyright (c) 2015 Alireza Mahmoodi
  * 
